@@ -72,7 +72,7 @@ var Game = {
 		document.body.appendChild(this.container);
 
 		this.colorCombos.whiteBlack = this.createColors(this.colors.white, this.colors.black);
-        this.colorCombos.greenRed = this.createColors(this.colors.green, this.colors.red);
+        	this.colorCombos.greenRed = this.createColors(this.colors.green, this.colors.red);
 
 		var title = this.createText(this.colorCombos.greenRed, "rot.js Tutorial");
 		this.display.drawText(0, 0, title);
