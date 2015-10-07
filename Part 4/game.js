@@ -22,11 +22,11 @@ var Game = {
 
 	createPlayer: function(openCells) {
 		var index = Math.floor(ROT.RNG.getUniform() * openCells.length);
-    var key = openCells.splice(index, 1)[0];
-    var parts = key.split(",");
-    var x = parseInt(parts[0]);
-    var y = parseInt(parts[1]);
-    this.player = new Player(x, y);
+                var pos = openCells.splice(index, 1)[0];
+    		var posArr = pos.split(",");
+    		var x = parseInt(posArr[0]);
+    		var y = parseInt(posArr[1]);
+    		this.player = new Player(x, y);
 	},
 
 	createMap: function() {
@@ -57,13 +57,9 @@ var Game = {
 	// Parameter stores
 	
 	display: null,
-	
 	container: null,
-
 	engine: null,
-	
 	player: null,
-
 	map: {},
 
 	gameOptions: {
@@ -89,7 +85,7 @@ var Game = {
 		document.body.appendChild(this.container);
 
 		this.colorCombos.whiteBlack = this.createColors(this.colors.white, this.colors.black);
-    this.colorCombos.greenRed = this.createColors(this.colors.green, this.colors.red);
+    		this.colorCombos.greenRed = this.createColors(this.colors.green, this.colors.red);
 
 		var title = this.createText(this.colorCombos.greenRed, "rot.js Tutorial");
 		this.display.drawText(0, 0, title);
@@ -106,7 +102,7 @@ var Player = function(x, y) {
 		Game.display.draw(this.x, this.y, "@", Game.colors.green);
 	};
 	this.enableMovement = function() {
-    window.addEventListener("keydown", this);
+		window.addEventListener("keydown", this);
 	};
 	this.handleEvent = function(e) {
 	  var keyMap = {
