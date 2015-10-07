@@ -22,11 +22,12 @@ var Game = {
 
 	createPlayer: function(openCells) {
 		var index = Math.floor(ROT.RNG.getUniform() * openCells.length);
-                var pos = openCells.splice(index, 1)[0];
-    		var posArr = pos.split(",");
-    		var x = parseInt(posArr[0]);
-    		var y = parseInt(posArr[1]);
-    		this.player = new Player(x, y);
+    var pos = openCells.splice(index, 1)[0];
+    var posArr = pos.split(",");
+    var x = parseInt(posArr[0]);
+    var y = parseInt(posArr[1]);
+    this.player = new Player(x, y);
+    this.player.draw();
 	},
 
 	createMap: function() {
@@ -42,7 +43,6 @@ var Game = {
 		}.bind(this));
 		this.drawMap();
 		this.createPlayer(openCells);
-		this.player.draw();
 	},
 
 	drawMap: function() {
@@ -58,7 +58,6 @@ var Game = {
 	
 	display: null,
 	container: null,
-	engine: null,
 	player: null,
 	map: {},
 
@@ -85,7 +84,7 @@ var Game = {
 		document.body.appendChild(this.container);
 
 		this.colorCombos.whiteBlack = this.createColors(this.colors.white, this.colors.black);
-    		this.colorCombos.greenRed = this.createColors(this.colors.green, this.colors.red);
+		this.colorCombos.greenRed = this.createColors(this.colors.green, this.colors.red);
 
 		var title = this.createText(this.colorCombos.greenRed, "rot.js Tutorial");
 		this.display.drawText(0, 0, title);
