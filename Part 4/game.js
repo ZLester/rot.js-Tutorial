@@ -22,12 +22,12 @@ var Game = {
 
 	createPlayer: function(openCells) {
 		var index = Math.floor(ROT.RNG.getUniform() * openCells.length);
-    var pos = openCells.splice(index, 1)[0];
-    var posArr = pos.split(",");
-    var x = parseInt(posArr[0]);
-    var y = parseInt(posArr[1]);
-    this.player = new Player(x, y);
-    this.player.draw();
+		var pos = openCells.splice(index, 1)[0];
+		var posArr = pos.split(",");
+		var x = parseInt(posArr[0]);
+		var y = parseInt(posArr[1]);
+		this.player = new Player(x, y);
+		this.player.draw();
 	},
 
 	createMap: function() {
